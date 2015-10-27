@@ -4,3 +4,7 @@ module.exports.TUMBLR_CONSUMER_SECRET = "YOUR_TUMBLR_COMSUMER_SECRET";
 module.exports.TUMBLR_TOKEN = "YOUR_TUMBLR_TOKEN";
 module.exports.TUMBLR_TOKEN_SECRET = "YOUR_TUMBLR_TOKEN_SECRET";
 module.exports.TUMBLR_BLOG_URL = "YOUR_BLOG_HOSTNAME";
+
+module.exports.SENDER_NAME = "Your Name Here";
+module.exports.SENDER_EMAIL = "your.email@domain.com";
+module.exports.BLOG_URL = "http://yourblogurl.tumblr.com";

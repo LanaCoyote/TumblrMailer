@@ -1,8 +1,8 @@
+var cfg    = require( './cfg' ); // external config
 var csv    = require( './csv' ); // csv module
 var email  = require( './email' ); // email module
 var tumblr = require( './tumblr' ); // tumblr module
 
-var blog_url = "http://davidreevecodes.tumblr.com/";
 var contact_list = csv.parse( "friend_list.csv" );
 console.log( "You have " + contact_list.length + " contacts" );
 
@@ -21,7 +21,7 @@ tumblr.getLatestPosts( 7, function( latest_posts ) {
         var template_data = {
             "firstName": contact.firstName,
             "numMonthsSinceContact": contact.numMonthsSinceContact,
-            "blogUrl": blog_url,
+            "blogUrl": cfg.BLOG_URL,
             "latestPosts": latest_posts
         };
         var new_email = email.fromTemplate(
@@ -33,6 +33,6 @@ tumblr.getLatestPosts( 7, function( latest_posts ) {
 
         // send the email!
         new_email.send( fullName( contact ), contact.emailAddress,
-            "David Reeve", "david.thomas.reeve@gmail.com" );
+            cfg.SENDER_NAME, cfg.SENDER_EMAIL );
     } );
 } );
