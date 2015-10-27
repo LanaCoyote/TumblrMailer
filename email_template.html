@@ -1,0 +1,20 @@
+<html>
+<head><meta charset = 'utf-8'></head>
+<body>
+    <h2>Hey <%= firstName %>, it's been a while!</h2>
+    <br>
+    <p id="greeting">
+        Lots of exciting things have happened in <%= numMonthsSinceContact %> months! I've been blogging about all of them on <a href="<%= blogUrl %>">my blog</a>. Now's a great time to check out my latest posts:
+    </p>
+
+    <ul id="post_list">
+        <% for ( var i=0; i < latestPosts.length; ++i ) { %><li>
+            <a href="<%= latestPosts[i].url %>"><%= latestPosts[i].title %></a>
+        </li><% } %>
+    </ul>
+
+    <p id="closing">
+        Don't miss a thing! Follow my blog at <a href="<%= blogUrl %>"><%= blogUrl %></a> today!
+    </p>
+</body>
+</html>
